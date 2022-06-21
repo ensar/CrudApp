@@ -1,0 +1,27 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "Remove";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Remove</h1>
+<div class="row">
+    <div class="col-12 d-flex justify-content-center bg-light rounded py-2">
+        <form method="post" class="class="col-5">
+            <div class="row col-12 mt-4">
+                <label asp-for="Id" class="form-label"></label>
+                <input asp-for="Id" disabled class="form-control">
+            </div>
+            <div class="row col-12 mt-4">
+                <label asp-for="CustomerName" class="form-label"></label>
+                <input asp-for="CustomerName" disabled class="form-control"/>
+            </div>
+            <div class="row col-12 mt-4">
+                <label asp-for="CustomerJob" class="form-label"></label>
+                <input asp-for="CustomerJob" disabled class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-outline-danger mt-4">Delete</button>
+        </form>
+    </div>
+</div>
+

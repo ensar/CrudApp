@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Customer>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-lg">
+<div class="row col-2 mb-4">
+    <a class="btn btn-success" asp-action="Create" asp-controller="Customer">Add Customer</a>
+</div>
+<div class="row col-10 align-self-center">
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Action</th>
+        </tr>
+    </thead> 
+    <tbody class="table-group-divider">
+    @foreach(var customer in Model)
+    {
+        <tr>
+        <td>@customer.Id</td>
+        <td>@customer.CustomerName</td>
+        <td>@customer.CustomerJob</td>
+        <td>
+            <a class="btn btn-sm btn-warning" asp-controller="Customer" asp-action="Edit" asp-route-id="@customer.Id">Edit</a>
+            <a class="btn btn-sm btn-danger ml-2" asp-controller="Customer" asp-action="Remove" asp-route-id="@customer.Id">Delete</a>
+        </td>
+        </tr>
+    }
+    </tbody>
+</table>
+</div>
+</div>
